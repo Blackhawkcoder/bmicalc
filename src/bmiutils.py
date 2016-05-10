@@ -14,7 +14,7 @@ def bmi_float(value):
 
 
 def bmi(length, weight):
-    """ Calculates BMI
+    """ Calculates BMI Metric
 
     Args:
         length - length in cm
@@ -28,6 +28,28 @@ def bmi(length, weight):
 
     # Test if we would have done division by zero
     if(l == 0):
+        return 0
+    else:
+        return (w / (l * l))
+
+    
+def bmi2(lengthft,lengthinch, weightlb):
+    """ Calculates BMI Imperial
+
+    Args:
+        lengthft - length in ft
+        lengthinch - length in inch
+        weight - weight in lb
+    Return:
+        Result of calculation or 0 if division by zero would have occured
+    """
+
+    l = ((bmi_float(lengthft) * 12) + (bmi_float(lengthinch))) * 0.0254 #Already in m
+         
+    w = (bmi_float(weightlb) * 0.45359237)
+
+        # Test if we would have done division by zero
+    if (l == 0):
         return 0
     else:
         return (w / (l * l))
